@@ -5,7 +5,7 @@ body {
     line-height: 1.5em;
     background: url(../pictures/bright_squares2.png) repeat;
     font-family: "Open Sans", Arial;
-    
+    margin: 0px;
 }
 
 h1{
@@ -30,6 +30,40 @@ li{
     font-size: 20px;
 
     }
+.stuff{
+    background-image: url(../pictures/thing.jpg);
+    position: relative;
+    height: 1000px;
+    background-attachment: fixed;
+    width:  100%;
+    z-index: -1;
+    background-repeat: no-repeat;
+    background-size: 100% 1000px;
+    background-position: top center;
+    overflow: hidden;
+}
+.logo{
+    background-image: url(../pictures/pic.jpeg);
+    background-repeat: no-repeat;
+    width: 100%;
+    background-position: top  center;
+    height: 100%;
+    position: absolute;
+    top: 0%;
+    margin-top: 100px;
+
+}
+.extra{
+    background-image: url(../pictures/pic.jpeg);
+    background-repeat: no-repeat;
+    width: 100%;
+    background-position: top left;
+    height: 100%;
+    position: absolute;
+    top: 0%;
+    margin-top: 100px;
+
+}
 
  .info {
     max-width: 980px;   
