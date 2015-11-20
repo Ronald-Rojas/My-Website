@@ -1,57 +1,217 @@
+<!doctype html>
+<!--
+@license
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
 
-<html>
-    
-    <head> 
-        <title>
-    Ronald Rojas
-        </title>
-    <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="description">
-    <meta name="keywords">
-    <link rel="stylesheet" type="text/css" href="css/styles.css" /> 
-    <script type="text/javascript" src="scripts/jquery-1.11.3.js"></script>
-    <script type="text/javascript" src = "scripts/parallax.js"></script>
-    <link rel="icon" type ="ccs/image/png" href="favicon.png">
-    <link rel="shortcut icon" href="favicon.png" type = "image/png" sizes= "16x16">
-    
-    </head>
-    <body> 
-	<div class ="stuff">
-        <div class="logo"></div>
-        <div class = "extra"></div>
-	</div>
-        <h1>Ronald Rojas' Portfolio</h1>
-        <div class ="info">
-            <h2> Education</h2>
-            <p> I am currently a freshman in the College of Arts and Science at New York University pursuing my undergraduate Bachelors degree. I am currently a Computer Science major with a minor in Mathematics
-            </p>
+<html lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="generator" content="Polymer Starter Kit" />
+  <title>Ronald Rojas</title>
+  <!-- Place favicon.ico in the `app/` directory -->
+
+  <!-- Chrome for Android theme color -->
+  <meta name="theme-color" content="#2E3AA1">
+
+  <!-- Web Application Manifest -->
+  <link rel="manifest" href="manifest.json">
+
+  <!-- Tile color for Win8 -->
+  <meta name="msapplication-TileColor" content="#3372DF">
+
+  <!-- Add to homescreen for Chrome on Android -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="PSK">
+  <link rel="icon" sizes="192x192" href="images/touch/chrome-touch-icon-192x192.png">
+
+  <!-- Add to homescreen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Polymer Starter Kit">
+  <link rel="apple-touch-icon" href="images/touch/apple-touch-icon.png">
+
+  <!-- Tile icon for Win8 (144x144) -->
+  <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
+
+  <!-- build:css styles/main.css -->
+  <link rel="stylesheet" href="styles/main.css">
+  <!-- endbuild-->
+
+  <!-- build:js bower_components/webcomponentsjs/webcomponents-lite.min.js -->
+  <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+  <!-- endbuild -->
+
+  <!-- will be replaced with elements/elements.vulcanized.html -->
+  <link rel="import" href="elements/elements.html">
+  <!-- endreplace-->
+
+  <!-- For shared styles, shared-styles.html import in elements.html -->
+  <style is="custom-style" include="shared-styles"></style>
+
+</head>
+
+<body unresolved class="fullbleed layout vertical">
+  <span id="browser-sync-binding"></span>
+  <template is="dom-bind" id="app">
+
+    <paper-drawer-panel id="paperDrawerPanel">
+      <!-- Drawer Scroll Header Panel -->
+      <paper-scroll-header-panel drawer fixed>
+
+        <!-- Drawer Toolbar -->
+        <paper-toolbar id="drawerToolbar">
+          <span class="paper-font-title">Menu</span>
+        </paper-toolbar>
+
+        <!-- Drawer Content -->
+        <paper-menu class="list" attr-for-selected="data-route" selected="[[route]]">
+          <a data-route="home" href="/" on-click="onDataRouteClick">
+            <iron-icon icon="home"></iron-icon>
+            <span>Home</span>
+          </a>
+
+          <a data-route="projects" href="/projects" on-click="onDataRouteClick">
+            <iron-icon icon="users"></iron-icon>
+            <span>Projects</span>
+          </a>
+
+          <a data-route="contact" href="/contact" on-click="onDataRouteClick">
+            <iron-icon icon="mail"></iron-icon>
+            <span>Contact</span>
+          </a>
+        </paper-menu>
+      </paper-scroll-header-panel>
+
+      <!-- Main Area -->
+      <paper-scroll-header-panel main condenses keep-condensed-header>
+
+        <!-- Main Toolbar -->
+        <paper-toolbar id="mainToolbar" class="tall">
+          <paper-icon-button id="paperToggle" icon="menu" paper-drawer-toggle></paper-icon-button>
+          <span class="flex"></span>
+
+          <!-- Toolbar icons -->
+          <paper-icon-button icon="refresh"></paper-icon-button>
+          <paper-icon-button icon="search"></paper-icon-button>
+
+          <!-- Application name -->
+          <div class="middle middle-container center horizontal layout">
+            <div class="app-name">Ronald Rojas</div>
+          </div>
+
+          <!-- Application sub title -->
+          <div class="bottom bottom-container center horizontal layout">
+    <div class="bottom-title paper-font-subhead"> Computer Science | Machine Learning | Distributed File Systems</div>
+          </div>
+
+        </paper-toolbar>
+
+        <!-- Main Content -->
+        <div class="content">
+          <iron-pages attr-for-selected="data-route" selected="{{route}}">
+
+            <section data-route="home">
+              <paper-material elevation="1">
+                
+
+                <h1>Education</h1>
+                <p>I am currently a sophmore in the College of Arts and Science at New York University pursuing my undergraduate Bachelors degree. I am currently a Computer Science major with a minor in Mathematics</p>
+                <my-list></my-list>
+              </paper-material>
+              <paper-material elevation="1">
+                <h1>Personal Projects</h1>
+                  <p > Check out some of my personal projects like my "Nim Game" or "room controls app"</p>
+              </paper-material>
+
+              <paper-material elevation="1" class="paper-font-body2">
+                <h1 id="license">About Myself</h1>
+              <p>As a computer science major and a mathematics minor I have a strong insterest in Machine Learning and Distributed File Systems. These are the two subjects that are constantly being improved upon and I enjoy learning and experimenting with these developing subjects. In order to learn more about these subjects I spend my spare time experimenting with new sofware and hardware. I am currently taking Data Structures, Linear Algrebra, and Introduction to Web Design.  </p>
+              </paper-material>
+
+            </section>
+
+            <section data-route="projects">
+              <paper-material elevation="1">
+                <h2 class="page-title">Personal Server</h2>
+                <p> In order to better understand how computers work I procured some hardware from my friends and worksplace and set up a personal server. I currently have two servers with a third in the works. This first server, which I call Jeeves, runs on the standard user version of Ubuntu version 14.04 LTS. The second one, which I call Alfred, runs on the the Ubuntu Server version so there is no UI for it. Alfred is also running raid 0 on two 80GB hard drives. Both have openssh insalled for remote access. I am currently working on setting them setting them up communicate with each other to form a two node cluster! By having a multi node cluster I can truly start working on a distrited file system.  </p>
+                <a href="/projects/server">server</a>
+              </paper-material>
+                <paper-material elevation= "1">
+                <h2 class ="page-title">Nim App </h2>
+                <p> This was my first android application that I used to learn the basics of android development. Nim is a centuries old mathematic game that has a fixed number of possible outcomes, such as tic-tac-toe and chess, and is somewhere between the two in terms of complexity. 
+                </p>
+                <p>The main point of this project was to create a fairly complicated game with an AI that could win against the player. After hours of testing several edge cases I finally managed to complete the project with a master AI that never loses!
+                </p>
+                    <a href="https://github.com/Ronald-Rojas/Nim-Game">                   <p> check out the game on my github</p>
+</a>
+                
+                </paper-material>
+                <paper-material elevation ="1">
+                    <h2 class="page-title"> Room Controls App</h2>
+                    <p> This is a project that I'm currently working on is an android application that is connects to an Arduino Uno via bluetooth. The arduino itself is also connected to several lamps and the air conditioner in my room. The app will allow me to control these items in my toom and also set alarms to turn them on and off, to help me wake up in the morning and to automatically turn on and off everything in my room. This application is an ongoing project but your can check out the current code at <a hrf="https://github.com/Ronald-Rojas/Room-Controls">Github</a> </p>
+                </paper-material>
+                <paper-material elevation ="1">
+                    <h2 class="page-title"> Papercut at Stern
+                    </h2>
+                    <p> This was a hack for my worksplace at Stern Information Technology. Stern has a license for the Papercut application which came with support for both Windows and Mac but not Linux. I made the linux compatible version of the software that is configured to work on the Stern network. Now every user in can use the Papercut Application! My favorite part of creating this application was creating a shell script in order for a new user to easily install the application. All the user has to do now is run the Install script and follow the prompts that follow. Check out the code on my <a href="github.com/Ronald-Rojas/SternPapercut-Linux">Github</a> if you want to use or check out the application. 
+                    </p>
+
+                </paper-material>
+            </section>
+
+            <section data-route="projects/sever">
+              <paper-material elevation="1">
+                <h2 class="page-title">
+                User:<span>{{params.name}}</span>
+                </h2>
+                <div>This is <span>{{params.name}}</span>'s section</div>
+              </paper-material>
+            </section>
+
+            <section data-route="contact">
+              <paper-material elevation="1">
+                <h2 class="page-title">Contact</h2>
+                <p>Contact me at ronaldrojas.nyu.edu</p>
+                <p> or find me on my github </p><a href="https://github.com/Ronald-Rojas"><img src="images/github-black-white.png"/></a>
+              </paper-material>
+            </section>
+
+          </iron-pages>
         </div>
-        <div class= "info">
-            <h2>Personal Projects</h2>
-            <p>All of the work that I have done both inside of class and outside of class is available on Github
-            </p>
-            <a href=https://github.com/Ronald-Rojas><button class= "button">GitHub</button></a>
-        </div>
-        <div class="info">
-            <h2>Achievements</h2> 
-            <!-- <p> I currently plan to attend the Angel Hackathon's in Manhattten, NY and Brooklyn, NY later this summer
-            </p> -->
-        <p> Throughout my Computer Science career I have been to many events and completed many projects. Click the link below to find out more!</p>
-         <a href = achievements.html><button class= "button"> Acheivements</button>
-            </a>
-        </div>
-        <div class= "contact">
-            <h2>Contact</h2>
-            <p> Feel free to contact me about any of the projects that I am working on
-            </p>
-            <a href = https://www.linkedin.com/pub/ronald-rojas/b8/166/93><button class= "button"> Linkedin</button>
-            </a>
-        </div>
-        <footer>
-            Ronald Rojas <br>
-            ronaldrojas@nyu.edu<br>
-            ronald.rojas@stern.nyu.edu
-        </footer>
-    </body>
+      </paper-scroll-header-panel>
+    </paper-drawer-panel>
+
+    <!-- Uncomment next block to enable Service Worker support (1/2) -->
+    <!--
+    <paper-toast id="caching-complete"
+                 duration="6000"
+                 text="Caching complete! This app will work offline.">
+    </paper-toast>
+
+    <platinum-sw-register auto-register
+                          clients-claim
+                          skip-waiting
+                          on-service-worker-installed="displayInstalledToast">
+      <platinum-sw-cache default-cache-strategy="fastest"
+                         cache-config-file="cache-config.json">
+      </platinum-sw-cache>
+    </platinum-sw-register>
+    -->
+
+  </template>
+
+  <!-- build:js scripts/app.js -->
+  <script src="scripts/app.js"></script>
+  <!-- endbuild-->
+</body>
+
 </html>
