@@ -15,6 +15,20 @@ func (_ tApp) Index(
 	return revel.MainRouter.Reverse("App.Index", args).Url
 }
 
+func (_ tApp) Projects(
+		) string {
+	args := make(map[string]string)
+	
+	return revel.MainRouter.Reverse("App.Projects", args).Url
+}
+
+func (_ tApp) Resume(
+		) string {
+	args := make(map[string]string)
+	
+	return revel.MainRouter.Reverse("App.Resume", args).Url
+}
+
 
 type tTestRunner struct {}
 var TestRunner tTestRunner

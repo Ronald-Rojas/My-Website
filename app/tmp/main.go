@@ -40,6 +40,24 @@ func main() {
 					},
 				},
 			},
+			&revel.MethodType{
+				Name: "Projects",
+				Args: []*revel.MethodArg{ 
+				},
+				RenderArgNames: map[int][]string{ 
+					14: []string{ 
+					},
+				},
+			},
+			&revel.MethodType{
+				Name: "Resume",
+				Args: []*revel.MethodArg{ 
+				},
+				RenderArgNames: map[int][]string{ 
+					18: []string{ 
+					},
+				},
+			},
 			
 		})
 	
